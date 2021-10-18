@@ -1,15 +1,34 @@
 import React, { Component } from 'react'
 import {FormGroup, Label, Input, Form, Button } from 'reactstrap'
 
-export class EditorMenu extends Component {
+class EditorMenu extends Component {
     
+    
+      handleChange = (event) => {    
+          this.props.onSetTitle(event.target.value);
+          event.preventDefault();  
+      }
+    
+      handleSubmit(event) {
+        alert('A name was submitted: ' + this.state.value);
+        event.preventDefault();
+      }
+
     render() {
+
+        
         return (
             <div className="formDiv myEditor">
                 <Form className="editorMenu">
                     <FormGroup className="mt-2 text-light">
                         <Label for="validationTooltip01" >Snip Title</Label>
-                        <Input type="text" class="form-control" id="validationTooltip01" value="Hello World" required />
+                        <Input type="text" 
+                         
+                        name="textbox"
+                        onChange={this.handleChange}
+                        placeholder="Hello World"
+                        required
+                        />
                         <Label for="exampleSelect" className="mt-2 text-light">Language</Label>
                         <Input type="select" name="select" id="languageSelect">
                         <option>Text</option>

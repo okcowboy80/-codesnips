@@ -10,7 +10,8 @@ function App() {
   const [css, setCss] = useState('')
   const [js, setJs] = useState('')
   const [srcDoc, setSrcDoc] = useState('')
-
+  const [title, setTitle] = useState('')
+  
   useEffect(() => {
     const timeout = setTimeout(() => {
       setSrcDoc(`
@@ -25,14 +26,18 @@ function App() {
     return () => clearTimeout(timeout)
   }, [html, css, js])
 
+  const handleCallback = (titleData) =>{
+    setTitle(titleData)
+  }
+
   return (
     <>
       <MyNav />
       
       <div className="pane top-pane">
-        <EditorMenu />
-        
+        <EditorMenu onSetTitle = {handleCallback}/>
         <Editor 
+          title={title}
           language="javascript" 
           displayName="JavaScript" 
           value={js} 

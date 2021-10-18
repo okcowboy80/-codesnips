@@ -94,3 +94,7 @@
 #search {
   width: 250px;
 }
+
+#textbox{ 
+  z-index: 1001 !important;
+}
