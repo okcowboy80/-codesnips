@@ -8,7 +8,9 @@ export class EditorMenu extends Component {
             <div className="formDiv myEditor">
                 <Form className="editorMenu">
                     <FormGroup className="mt-2 text-light">
-                        <Label for="exampleSelect">Language</Label>
+                        <Label for="validationTooltip01" >Snip Title</Label>
+                        <Input type="text" class="form-control" id="validationTooltip01" value="Hello World" required />
+                        <Label for="exampleSelect" className="mt-2 text-light">Language</Label>
                         <Input type="select" name="select" id="languageSelect">
                         <option>Text</option>
                         <option>javascript</option>
@@ -17,7 +19,7 @@ export class EditorMenu extends Component {
                         <option>Java</option>
                         </Input>
                     </FormGroup>
-                    <FormGroup className="mt-3 text-light">
+                    <FormGroup className="mt-2 text-light">
                         <Label for="exampleSelect">Style</Label>
                         <Input type="select" name="select" id="styleSelect">
                         <option>Light</option>
@@ -27,7 +29,7 @@ export class EditorMenu extends Component {
                         <option>5</option>
                         </Input>
                     </FormGroup>
-                    <FormGroup className="mt-4 text-light" tag="fieldset">
+                    <FormGroup className="mt-4 mb-3 text-light" tag="fieldset">
                         {/* <legend>Radio Buttons</legend> */}
                         <h5>Private / Public</h5>
                         <FormGroup check>
