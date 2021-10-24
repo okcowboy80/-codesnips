@@ -5,15 +5,21 @@ import EditorMenu from './EditorMenu';
 import ClearComponent from './ClearComponent';
 
 function App() {
-  const [js, setJs] = useState('')
-  const [title, setTitle] = useState('')
-  const [language, setLanguage] = useState('')
-  const [style, setStyle] = useState('')
-  const [languageSelect, setLanguageSelect] = useState('')
-
+  const [js, setJs] = useState('');
+  const [title, setTitle] = useState('');
+  const [language, setLanguage] = useState('');
+  const [style, setStyle] = useState('');
+  const [languageSelect, setLanguageSelect] = useState('');
+  const [author, setAuthor] = useState('');
+  const [editorObject, setEditorObject] = useState('');
+  
   
   const handleTitle = (title) =>{
     setTitle(title)
+  }
+
+  const handleAuthor = (author) =>{
+    setAuthor(author)
   }
 
   const handleLanguage = (str) => {
@@ -24,6 +30,16 @@ function App() {
 
   const handleStyle = (style) => {
     setStyle(style)
+  }
+
+  const handleObject = (object) => {
+    console.log("Alerted.")
+    setEditorObject(object)
+    
+  }
+
+  const handleClearEditor = (editor) => {
+
   }
 
   const languageSelector = (language) => {
@@ -59,14 +75,17 @@ function App() {
       <MyNav />
       
       <div className="pane top-pane">
-        <EditorMenu onSetTitle={handleTitle} onSetLanguage={handleLanguage} onSetStyle={handleStyle}/>
+        <EditorMenu onSetTitle={handleTitle} onSetLanguage={handleLanguage} onSetStyle={handleStyle} onSetAuthor={handleAuthor}/>
         <Editor 
           title={title ? title : "CodeSnip 1"}
           language={language ? language : "text"} 
           displayName={languageSelect ? languageSelect : "Text"} 
+          author={author ? author : "User_1"}
           style={style ? style : "midnight"}
           value={js} 
           onChange={setJs} 
+          onSetobject={handleObject}
+          onClearEditor={handleClearEditor}
         />
         <ClearComponent />
       </div>

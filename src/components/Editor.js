@@ -17,10 +17,8 @@ import 'codemirror/mode/ruby/ruby'
 import 'codemirror/mode/javascript/javascript'
 import 'codemirror/addon/scroll/simplescrollbars'
 import 'codemirror/lib/codemirror.css';
-
-// import CodeMirror from 'react-codemirror2';
+// import CodeMirror from 'codemirror'
 import { Controlled as ControlledEditor } from 'react-codemirror2'
-
 
 export default function Editor(props) {
     
@@ -30,13 +28,14 @@ export default function Editor(props) {
         displayName,
         value,
         onChange,
-        style
+        style,
+        author
     } = props
     
     function handleChange(editor, data, value) {
         onChange(value)
     }
-        
+
     return (
         <div className={`editor-container`}>
             
@@ -44,13 +43,16 @@ export default function Editor(props) {
                 {displayName}
                 <span>{title}</span>
                 
-                <div></div>
+                <span>{author}</span>
             </div>
             
             <ControlledEditor 
+                
                 onBeforeChange={handleChange}
+                // onClearEditor={handleClearEditor}
                 value={value}
-                className="code-mirror-wrapper CodeMirror-simplescroll"
+                className="code-mirror-wrapper"
+                id="codemirror"
                 options={{
                     lineWrapping: true,
                     lint: true,
@@ -61,6 +63,7 @@ export default function Editor(props) {
                     tabMode: "default",
                 }}
             />
+            
         </div>
     )
 }
