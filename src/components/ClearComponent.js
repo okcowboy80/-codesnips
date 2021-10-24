@@ -12,7 +12,7 @@ export class ClearComponent extends Component {
         }
         return (
             <div className="myEditor mt-auto">
-                <Button className="btn mt-3" onClick={onClear}>Clear</Button>
+                <Button className="btn mt-3" onClick={onClear}>Reset</Button>
             </div>
         )
     }

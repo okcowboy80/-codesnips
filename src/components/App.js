@@ -3,6 +3,7 @@ import Editor from './Editor';
 import MyNav from './MyNav';
 import EditorMenu from './EditorMenu';
 import ClearComponent from './ClearComponent';
+import Footer from './Footer';
 
 function App() {
   const [js, setJs] = useState('');
@@ -90,8 +91,9 @@ function App() {
         <ClearComponent />
       </div>
       <div className="pane">
-        
+       
       </div>
+      <Footer />
     </>
   );
 }

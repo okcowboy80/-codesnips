@@ -59,23 +59,15 @@ export class MyNav extends Component {
 							Reset
 							</DropdownItem>
 						</DropdownMenu>
-						</UncontrolledDropdown>
-						
+						</UncontrolledDropdown>	
 					</Nav>
-					
 					<NavItem className="navbar-right d-flex justify-content-end naav">
 						<input id="search" type="text" placeholder="Search.."></input>
-					</NavItem>
-					
+					</NavItem>		
 						<i class="fa fa-sign-in-alt icon fa-2x d-flex justify"></i>
-					
-
 					</Collapse>
-					
 				</Navbar>
-				
     		</div>
-			
 		)
 	}
 }
