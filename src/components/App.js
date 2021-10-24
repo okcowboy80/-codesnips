@@ -1,33 +1,57 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Editor from './Editor';
 import MyNav from './MyNav';
 import EditorMenu from './EditorMenu';
 import ClearComponent from './ClearComponent';
 
-
 function App() {
-  const [html, setHtml] = useState('')
-  const [css, setCss] = useState('')
   const [js, setJs] = useState('')
-  const [srcDoc, setSrcDoc] = useState('')
   const [title, setTitle] = useState('')
-  
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setSrcDoc(`
-      <html>
-      <body>${html}</body>
-      <style>${css}</style>
-      <script>${js}</script>
-    </html>
-      `)
-    }, 250)
-    
-    return () => clearTimeout(timeout)
-  }, [html, css, js])
+  const [language, setLanguage] = useState('')
+  const [style, setStyle] = useState('')
+  const [languageSelect, setLanguageSelect] = useState('')
 
-  const handleCallback = (titleData) =>{
-    setTitle(titleData)
+  
+  const handleTitle = (title) =>{
+    setTitle(title)
+  }
+
+  const handleLanguage = (str) => {
+    setLanguage(languageSelector(str))
+    
+    return str;
+  }
+
+  const handleStyle = (style) => {
+    setStyle(style)
+  }
+
+  const languageSelector = (language) => {
+    switch(language) {
+      case "JavaScript" :
+        setLanguageSelect("JavaScript")
+        // setLanguage("javascript")
+        return "javascript";
+      case "HTML" :
+        setLanguageSelect("HTML")
+        // setLanguage("xml")
+        return "xml";
+      case "CSS":
+        setLanguageSelect("CSS")
+        // setLanguage("css")
+        return "css";
+      case "Ruby" :
+        setLanguageSelect("Ruby")
+        // setLanguage("ruby")
+        return "ruby";
+      case "Text" :
+        setLanguageSelect("Text")
+        // setLanguage("text")
+        return "text";
+      default :
+        return "none";
+
+    }
   }
 
   return (
@@ -35,25 +59,19 @@ function App() {
       <MyNav />
       
       <div className="pane top-pane">
-        <EditorMenu onSetTitle = {handleCallback}/>
+        <EditorMenu onSetTitle={handleTitle} onSetLanguage={handleLanguage} onSetStyle={handleStyle}/>
         <Editor 
-          title={title}
-          language="javascript" 
-          displayName="JavaScript" 
+          title={title ? title : "CodeSnip 1"}
+          language={language ? language : "text"} 
+          displayName={languageSelect ? languageSelect : "Text"} 
+          style={style ? style : "midnight"}
           value={js} 
           onChange={setJs} 
         />
         <ClearComponent />
       </div>
       <div className="pane">
-        <iframe
-          srcDoc={srcDoc} 
-          title="output"
-          sandbox="allow-scripts"
-          frameBorder="0"
-          width="100%"
-          height="100%"
-        />
+        
       </div>
     </>
   );

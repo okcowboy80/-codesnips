@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { MDBInput, MDBCol } from "mdbreact";
 import {
   Collapse,
   Navbar,
@@ -32,9 +31,9 @@ export class MyNav extends Component {
 
 	render() {
 		return (
-			<div>
-				<Navbar color="dark" dark expand="md" >
-					<NavbarBrand className="text-danger" href="/">&lt;Code-Snips/&gt;</NavbarBrand>
+			<div >
+				<Navbar color="dark" dark expand="md"  >
+					<NavbarBrand className="text-danger" id="brand" href="/">&lt;Code-Snips/&gt;</NavbarBrand>
 					<NavbarToggler onClick={this.toggle} />
 					<Collapse isOpen={this.state.isToggleOn} navbar>
 					<Nav className="mr-auto d-lg-flex align-items-center" navbar >
