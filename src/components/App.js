@@ -4,6 +4,8 @@ import MyNav from './MyNav';
 import EditorMenu from './EditorMenu';
 import ClearComponent from './ClearComponent';
 import Footer from './Footer';
+import {BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import EditorCard from './EditorCard';
 
 function App() {
   const [js, setJs] = useState('');
@@ -39,10 +41,6 @@ function App() {
     
   }
 
-  const handleClearEditor = (editor) => {
-
-  }
-
   const languageSelector = (language) => {
     switch(language) {
       case "JavaScript" :
@@ -72,29 +70,58 @@ function App() {
   }
 
   return (
-    <>
-      <MyNav />
-      
-      <div className="pane top-pane">
-        <EditorMenu onSetTitle={handleTitle} onSetLanguage={handleLanguage} onSetStyle={handleStyle} onSetAuthor={handleAuthor}/>
-        <Editor 
-          title={title ? title : "CodeSnip 1"}
-          language={language ? language : "text"} 
-          displayName={languageSelect ? languageSelect : "Text"} 
-          author={author ? author : "User_1"}
-          style={style ? style : "midnight"}
-          value={js} 
-          onChange={setJs} 
-          onSetobject={handleObject}
-          onClearEditor={handleClearEditor}
-        />
-        <ClearComponent />
-      </div>
-      <div className="pane">
-       
-      </div>
-      <Footer />
-    </>
+    <Router>
+      <>
+        <MyNav />
+        
+        <div className="pane top-pane">
+          <EditorMenu onSetTitle={handleTitle} onSetLanguage={handleLanguage} onSetStyle={handleStyle} onSetAuthor={handleAuthor}/>
+          <Editor 
+            title={title ? title : "CodeSnip 1"}
+            language={language ? language : "text"} 
+            displayName={languageSelect ? languageSelect : "Text"} 
+            author={author ? author : "User_1"}
+            style={style ? style : "midnight"}
+            value={js} 
+            onChange={setJs} 
+            onSetobject={handleObject}
+          />
+          <ClearComponent />
+        </div>
+        <div className="featuredCardsDiv">
+          <div className="container-fluid">
+            <div className="featured">
+              <h2>Featured CodeSnips</h2>
+            </div>
+            <div className="row mt-3 mb-3">
+              <div className="col-4">
+                <EditorCard />
+              </div>
+              <div className="col-4">
+                <EditorCard />
+              </div>
+              <div className="col-4">
+                <EditorCard />
+              </div>
+              <div className="col-4">
+                <EditorCard />
+              </div>
+              <div className="col-4">
+                <EditorCard />
+              </div>
+              <div className="col-4">
+                <EditorCard />
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        <Footer />
+      </>
+      <Switch>
+        {/* <Route exact path="/" component={Home} /> */}
+      </Switch>
+    </Router>
   );
 }
 

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+
 import {
   Collapse,
   Navbar,
@@ -32,11 +34,11 @@ export class MyNav extends Component {
 	render() {
 		return (
 			<div >
-				<Navbar color="dark" dark expand="md"  >
-					<NavbarBrand className="text-danger" id="brand" href="/">&lt;Code-Snips/&gt;</NavbarBrand>
+				<Navbar color="dark" dark expand="md" className="ml-auto" >
+					<NavbarBrand id="brand" href="/">&lt;Code-Snips/&gt;</NavbarBrand>
 					<NavbarToggler onClick={this.toggle} />
 					<Collapse isOpen={this.state.isToggleOn} navbar>
-					<Nav className="mr-auto d-lg-flex align-items-center" navbar >
+					<Nav navbar className="ms-auto">
 						<NavItem>
 						<NavLink href="/components/">Components</NavLink>
 						</NavItem>
@@ -60,11 +62,15 @@ export class MyNav extends Component {
 							</DropdownItem>
 						</DropdownMenu>
 						</UncontrolledDropdown>	
+						<NavItem>
+							<input id="search" type="text" placeholder="Search.."></input>
+						</NavItem>
 					</Nav>
-					<NavItem className="navbar-right d-flex justify-content-end naav">
-						<input id="search" type="text" placeholder="Search.."></input>
-					</NavItem>		
-						<i class="fa fa-sign-in-alt icon fa-2x d-flex justify"></i>
+							
+						<NavLink>
+							<i class="fa fa-sign-in-alt icon fa-2x"></i>
+						</NavLink>
+						
 					</Collapse>
 				</Navbar>
     		</div>

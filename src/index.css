@@ -1,13 +1,18 @@
 .top-pane {
-  background-color: hsl(228, 21%, 9%);
+  background-color: hsl(225, 21%, 11%);
+  
 }
 
 .pane {
   display: flex;
+  padding-bottom: 10px;
+  /* border-bottom: solid 8px hsl(228, 22%, 9%); */
 }
 
 #brand {
   margin-left: 10px;
+  color: steelblue;
+  font-weight: bold;
 }
 
 #public {
@@ -53,8 +58,6 @@
   color: white;
   padding: .5rem .5rem .5rem 1rem;
   font-size: 1.05rem;
-  /* border-top-right-radius: .5rem;
-  border-top-left-radius: .5rem; */
 }
 
 .CodeMirror {
@@ -65,8 +68,6 @@
 .code-mirror-wrapper {
   /* flex-grow: 1; */
   height: 100%;
-  /* border-bottom-right-radius: .5rem;
-  border-bottom-left-radius: .5rem; */
   overflow: auto;
 }
 
@@ -85,6 +86,11 @@
 
 #search {
   width: 250px;
+}
+
+.login {
+  color:steelblue;
+  margin-top: 5px;
 }
 
 #textbox{ 
@@ -108,12 +114,40 @@
 }
 
 .footerDiv2 {
-  background-color: hsl(229, 30%, 25%);
+  background-color: steelblue;
   height: 5rem;
   text-align: center;
   padding-top: 1.75rem;
 }
 
-.copyright {
-  
+.cardBody {
+  background-color: rgb(21, 51, 56);
+  border-radius: .5em;
+}
+
+.card {
+  border-radius: .5em;
+  margin: 10px 0 ;
+}
+
+.cardTitle {
+  text-align: center;
+  background-color: rgb(19, 36, 51);
+  padding: 5px;
+}
+
+.cards {
+  color: white;
+}
+
+.featuredCardsDiv {
+  background-color: rgb(40, 40, 51);
+  padding: 10px;
+  border: 4px black;
+}
+
+.featured {
+  color: white;
+  text-decoration-line: underline;
+  margin: 10px;
 }

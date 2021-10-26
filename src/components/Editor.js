@@ -35,7 +35,7 @@ export default function Editor(props) {
     function handleChange(editor, data, value) {
         onChange(value)
     }
-
+// Need to create a component that will access the data and save to a database and later render as a new component
     return (
         <div className={`editor-container`}>
             
