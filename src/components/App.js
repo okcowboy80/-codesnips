@@ -4,7 +4,7 @@ import MyNav from './MyNav';
 import EditorMenu from './EditorMenu';
 import ClearComponent from './ClearComponent';
 import Footer from './Footer';
-import {BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import {BrowserRouter as Router, Switch } from 'react-router-dom';
 import EditorCard from './EditorCard';
 
 function App() {

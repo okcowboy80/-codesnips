@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Card, CardBody, CardSubtitle, CardTitle, CardText, Button } from 'reactstrap';
+import { Card, CardBody, CardSubtitle, CardTitle, CardText } from 'reactstrap';
 
 export default class EditorCard extends Component {
     constructor(props) {
