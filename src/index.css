@@ -151,3 +151,42 @@
   text-decoration-line: underline;
   margin: 10px;
 }
+
+.codeChunk {
+  background-color: black;
+  padding: 10px;
+
+}
+
+.codeText {
+  color: white;
+}
+
+.featuredText {
+  color: steelblue;
+}
+
+.modal-header {
+   padding:9px 15px;
+   border-bottom:1px solid #eee;
+   background-color: steelblue;
+   border-top-left-radius: 5px;
+   border-top-right-radius: 5px;
+   color: black;
+}
+
+
+.starText {
+  font-family: 'Roboto Mono', monospace;
+  
+  display: inline-block;
+  margin: 5px 10px;
+  align-items: center;
+}
+
+.star {
+  
+  margin-top: 10px;
+  display: inline-block;
+  align-items: center;
+}

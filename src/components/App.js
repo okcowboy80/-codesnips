@@ -91,7 +91,7 @@ function App() {
         <div className="featuredCardsDiv">
           <div className="container-fluid">
             <div className="featured">
-              <h2>Featured CodeSnips</h2>
+              <h2 className="featuredText">Featured CodeSnips</h2>
             </div>
             <div className="row mt-3 mb-3">
               <div className="col-4">

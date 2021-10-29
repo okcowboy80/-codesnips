@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody, Button } from 'reactstrap';
 
 import {
   Collapse,
@@ -15,7 +16,6 @@ import {
   DropdownItem
 } from 'reactstrap';
 
-
 export class MyNav extends Component {
 	// const [isOpen, setIsOpen] = useState(false);
     // const toggle = () => setIsOpen(!isOpen);
@@ -23,6 +23,7 @@ export class MyNav extends Component {
 		super(props);
 		this.state = {isToggleOn: true};
 		this.toggle = this.toggle.bind(this);
+		this.toggleModal = this.toggleModal.bind(this);
 	}
 
 	toggle() {
@@ -30,6 +31,18 @@ export class MyNav extends Component {
 		  isToggleOn: !prevState.isToggleOn
 		}));
 	  }
+
+	  toggleModal() {
+        this.setState({
+            isModalOpen: !this.state.isModalOpen
+        });
+      }
+
+	  handleLogin(event) {
+        alert(`Username: ${this.username.value} Password: ${this.password.value} Remember: ${this.remember.checked}`);
+        this.toggleModal();
+        event.preventDefault();
+    }
 
 	render() {
 		return (
@@ -40,39 +53,66 @@ export class MyNav extends Component {
 					<Collapse isOpen={this.state.isToggleOn} navbar>
 					<Nav navbar className="ms-auto">
 						<NavItem>
-						<NavLink href="/components/">Components</NavLink>
+						<NavLink href="/components/"></NavLink>
 						</NavItem>
 						<NavItem>
-						<NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+						<NavLink href="#">Sign Up</NavLink>
 						</NavItem>
-						<UncontrolledDropdown nav inNavbar>
+						<UncontrolledDropdown nav inNavbar >
 						<DropdownToggle nav caret>
-							Options
+							Site Links
 						</DropdownToggle>
 						<DropdownMenu right>
 							<DropdownItem>
-							Option 1
+							About Us
 							</DropdownItem>
 							<DropdownItem>
-							Option 2
+							Contact Us
 							</DropdownItem>
 							<DropdownItem divider />
 							<DropdownItem>
-							Reset
+							Snippet Gallery
 							</DropdownItem>
 						</DropdownMenu>
 						</UncontrolledDropdown>	
-						<NavItem>
+						
+						<NavItem >
 							<input id="search" type="text" placeholder="Search.."></input>
 						</NavItem>
-					</Nav>
-							
+					</Nav>	
 						<NavLink>
-							<i class="fa fa-sign-in-alt icon fa-2x"></i>
-						</NavLink>
-						
+							<i class="fa fa-sign-in-alt icon fa-2x" onClick={this.toggleModal}></i>
+						</NavLink>	
 					</Collapse>
 				</Navbar>
+
+				<Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
+                    <ModalHeader charCode="close" className="close" toggle={this.toggleModal}>Login
+					{/* <Button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></Button> */}
+					</ModalHeader>
+                    <ModalBody>
+                    <Form onSubmit={this.handleLogin}>
+                            <FormGroup>
+                                <Label htmlFor="username">Username</Label>
+                                <Input type="text" id="username" name="username"
+                                    innerRef={input => this.username = input} />
+                            </FormGroup>
+                            <FormGroup>
+                                <Label htmlFor="password">Password</Label>
+                                <Input type="password" id="password" name="password"
+                                    innerRef={input => this.password = input} />
+                            </FormGroup>
+                            <FormGroup check>
+                                <Label check>
+                                    <Input type="checkbox" name="remember"
+                                        innerRef={input => this.remember = input} />
+                                    Remember me
+                                </Label>
+                            </FormGroup>
+                            <Button type="submit" value="submit" color="muted" >Login</Button>
+                        </Form>
+                    </ModalBody>
+                </Modal>
     		</div>
 		)
 	}
