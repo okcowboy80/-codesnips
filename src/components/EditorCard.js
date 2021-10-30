@@ -12,22 +12,22 @@ export default class EditorCard extends Component {
         };
       }
     render() {
-        const starHandler = () => {
-            console.log("You clicked the star!")
-            this.state.starColor ==="white" ? 
-            this.setState({starColor: "yellow"}) : 
-            this.setState({starColor: "white"});
-            this.state.starColor ==="yellow" ?
-            this.setState({starSize: "fa-2x"}) : this.setState({starSize: "fa-lg"})
-            this.state.starColor ==="yellow" ? 
-            this.setState({starTextFontSize: "1.5rem"}) : this.setState({starTextFontSize: "1rem"});
-            this.state.starColor ==="yellow" ?
-            this.setState({starTextMargin: "10px"}) :
-            this.setState({starTextMargin: ""});
-            document.getElementById("starText").style.margin = this.state.starTextMargin;
-            document.getElementById("starText").style.fontSize = this.state.starTextFontSize
-            document.getElementById("star").style.color = this.state.starColor;
-        }
+        // const starHandler = () => {
+        //     console.log("You clicked the star!")
+        //     this.state.starColor ==="white" ? 
+        //     this.setState({starColor: "yellow"}) : 
+        //     this.setState({starColor: "white"});
+        //     this.state.starColor ==="yellow" ?
+        //     this.setState({starSize: "fa-2x"}) : this.setState({starSize: "fa-lg"})
+        //     this.state.starColor ==="yellow" ? 
+        //     this.setState({starTextFontSize: "1.5rem"}) : this.setState({starTextFontSize: "1rem"});
+        //     this.state.starColor ==="yellow" ?
+        //     this.setState({starTextMargin: "10px"}) :
+        //     this.setState({starTextMargin: ""});
+        //     document.getElementById("starText").style.margin = this.state.starTextMargin;
+        //     document.getElementById("starText").style.fontSize = this.state.starTextFontSize
+        //     document.getElementById("star").style.color = this.state.starColor;
+        // }
         return (
             <div >
                 <div className="cards">

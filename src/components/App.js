@@ -36,9 +36,7 @@ function App() {
   }
 
   const handleObject = (object) => {
-    console.log("Alerted.")
     setEditorObject(object)
-    
   }
 
   const languageSelector = (language) => {

@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { Button } from 'reactstrap';
-import CodeMirror from 'codemirror';
-
 
 export class ClearComponent extends Component {
     
