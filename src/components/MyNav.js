@@ -38,7 +38,7 @@ export class MyNav extends Component {
 
 	  toggleModal() {
         this.setState({
-            isModalOpen: !this.state.isModalToggleOpen
+            isModalOpen: !this.state.isModalOpen
         });
       }
 
