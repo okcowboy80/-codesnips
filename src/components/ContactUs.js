@@ -19,7 +19,7 @@ export default class ContactUs extends Component {
             <div className="aboutTextContainer container" style={{width: '50%'}}>
               <h2 className="text-center" style={{color: 'steelblue', padding: '20px'}}>Contact Us</h2>
               <code>
-                  <pre className="typeText">
+                  <pre className="typeText" style={{height: '200px'}}>
                       <p style={{color: 'tomato', fontSize: 'large'}}>Information: </p> <br /> 
                       <Typewriter style={{fontSize: '1.6rem'}}   
                         options={{
