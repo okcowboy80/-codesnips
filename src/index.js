@@ -2,14 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import App from './components/App';
 import 'font-awesome/css/font-awesome.css';
 import '../node_modules/font-awesome/css/font-awesome.min.css'; 
+import { BrowserRouter } from 'react-router-dom'
+import App from './components/App';
 
-ReactDOM.render(
-  <React.StrictMode>
+ReactDOM.render((
+  <BrowserRouter>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-
+  </BrowserRouter>
+), document.getElementById('root'))

@@ -1,3 +1,4 @@
+
 .top-pane {
   background-color: hsl(225, 21%, 11%);
   
@@ -6,7 +7,6 @@
 .pane {
   display: flex;
   padding-bottom: 10px;
-  /* border-bottom: solid 8px hsl(228, 22%, 9%); */
 }
 
 #brand {
@@ -63,10 +63,10 @@
 .CodeMirror {
   height: 100% !important;
   width: 100%;
+  font-size: 1.2rem;
 }
 
 .code-mirror-wrapper {
-  /* flex-grow: 1; */
   height: 100%;
   overflow: auto;
 }
@@ -103,6 +103,12 @@
   height: 50% !important;
 }
 
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+
 .footerDiv1 {
   background-color: hsl(228, 13%, 15%);
   height: 6rem;
@@ -110,7 +116,6 @@
 
 #btnSignUp {
   margin-top: 2rem;
-  
 }
 
 .footerDiv2 {
@@ -118,6 +123,7 @@
   height: 5rem;
   text-align: center;
   padding-top: 1.75rem;
+  
 }
 
 .cardBody {
@@ -190,3 +196,23 @@
   display: inline-block;
   align-items: center;
 }
+
+.typeText {
+  padding: 20px;
+  background-color: black;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: medium;
+  color: steelblue;
+  margin-bottom: 15px;
+}
+
+pre {
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+  font-size: 1.6rem; 
+  border-radius: 5px;      
+}
+

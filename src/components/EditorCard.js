@@ -29,12 +29,12 @@ export default class EditorCard extends Component {
         //     document.getElementById("star").style.color = this.state.starColor;
         // }
         return (
-            <div >
+            <div>
                 <div className="cards">
                     <Card className="card">
                         <CardBody className="cardBody">
                             <CardTitle className="cardTitle" tag="h5">CodeSnip Title</CardTitle>
-                            <CardSubtitle className="cardSubtitle" tag="h6" className="mb-2 text-muted">Author</CardSubtitle>
+                            <CardSubtitle className="cardSubtitle mb-2 text-muted" tag="h6">Author</CardSubtitle>
                             <hr />
                             <CardText className="cardText codeChunk">
                             <code className="codeText">
@@ -47,7 +47,6 @@ export default class EditorCard extends Component {
                             </CardText>
 
                             <hr />
-                            {/* <Button className="likeButton"><i class="fas fa-thumbs-up like"></i></Button> */}
                             
                             <i className={`fas fa-star ${this.state.starSize} star`} id="star" ></i>
                             <b className="starText" id="starText">1,214</b>

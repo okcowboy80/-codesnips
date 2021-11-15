@@ -6,13 +6,13 @@ export default class Footer extends Component {
         return (
             <div>
                 <section>
-                    <footer>
-                        <div className="container-fluid footerDiv1">
+                    <footer className="container-fluid">
+                        <div className="row footerDiv1">
                             <div className="row justify-content-center">
                                 <div className="col">
                                 </div>
                                 <div className="col text-center" id="buttonDiv">
-                                    <button type="button" class="btn btn-outline-light btn-rounded " id="btnSignUp">
+                                    <button type="button" className="btn btn-outline-light btn-rounded " id="btnSignUp">
                                         Register for free! Sign up!
                                     </button>
                                 </div>
@@ -21,7 +21,7 @@ export default class Footer extends Component {
                                 </div>
                             </div>
                         </div>
-                        <div className="footerDiv2">
+                        <div className="row footerDiv2">
                             <div>
                                 <small className="copyright text-light">&copy;2021: CodeSnips.com</small>
                             </div>

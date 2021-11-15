@@ -61,6 +61,7 @@ export default function Editor(props) {
                     scrollbarStyle: "simple",
                     theme: style,
                     tabMode: "default",
+                    
                 }}
             />
             
