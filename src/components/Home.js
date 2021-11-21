@@ -8,14 +8,12 @@ import EditorCard from './EditorCard';
 
 export default function Home() {
   
-  const [js, setJs] = useState('');
   const [title, setTitle] = useState('');
   const [language, setLanguage] = useState('');
   const [style, setStyle] = useState('');
   const [languageSelect, setLanguageSelect] = useState('');
   const [author, setAuthor] = useState('');
-  // const [editorObject, setEditorObject] = useState('');
-  
+  const [data, setData] = useState('');
   
   const handleTitle = (title) =>{
     setTitle(title)
@@ -66,7 +64,6 @@ export default function Home() {
   return (
     
       <>
-        
         <div className="pane top-pane" >
           <EditorMenu onSetTitle={handleTitle} onSetLanguage={handleLanguage} onSetStyle={handleStyle} onSetAuthor={handleAuthor}/>
           <Editor 
@@ -75,10 +72,10 @@ export default function Home() {
             displayName={languageSelect ? languageSelect : "Text"} 
             author={author ? author : "User_1"}
             style={style ? style : "midnight"}
-            value={js} 
-            onChange={setJs} 
+            value={data} 
+            onChange={setData}
           />
-          <ClearComponent />
+          <ClearComponent data={data}/>
         </div>
         <div className="featuredCardsDiv">
           <div className="container-fluid">

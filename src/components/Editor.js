@@ -29,12 +29,17 @@ export default function Editor(props) {
         value,
         onChange,
         style,
-        author
+        author,
+        // onSetData
     } = props
     
     function handleChange(editor, data, value) {
+        
+        // console.log(data.text)
         onChange(value)
     }
+
+    
 // Need to create a component that will access the data and save to a database and later render as a new component
     return (
         <div className={`editor-container`}>
@@ -64,7 +69,6 @@ export default function Editor(props) {
                     
                 }}
             />
-            
         </div>
     )
 }
