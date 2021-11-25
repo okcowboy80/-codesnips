@@ -6,7 +6,14 @@ import Footer from './Footer';
 
 
 export default class ContactUs extends Component {
+
   render() {
+
+    function handleSubmit() {
+      alert("Form was submitted successfuly!");
+      window.location.reload();
+    }
+
     document.querySelector("body").style.backgroundColor= "#2B3643"
     var txt1 = "Here is where you can contact us to leave feedback or for general inquiries";
     var txt2 = "Thank you for visiting our site!"
@@ -42,7 +49,7 @@ export default class ContactUs extends Component {
                   <Input style={{height: '200px'}} type="textarea" name="text" id="exampleText" placeholder="Your thoughts..." />
                 </FormGroup>
 
-                <Button style={{marginBottom: '200px', marginTop: '10px'}}>Submit</Button>
+                <Button style={{marginBottom: '200px', marginTop: '10px'}} onClick={handleSubmit}>Submit</Button>
               </Form>     
             </div>
             <Footer />
