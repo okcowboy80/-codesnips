@@ -40,13 +40,13 @@
 }
 
 .editor-container {
-  
+  margin-top: 10px;
   flex-grow: 3;
   flex-basis: 0;
   display: flex;
   flex-direction: column;
   width: 50%;
-  padding: .5rem;
+  padding: 0.4rem;
   background-color: hsl(228, 22%, 9%);
   font-size: 14px;
 }
@@ -190,14 +190,12 @@ footer {
 
 .starText {
   font-family: 'Roboto Mono', monospace;
-  
   display: inline-block;
   margin: 5px 10px;
   align-items: center;
 }
 
 .star {
-  
   margin-top: 10px;
   display: inline-block;
   align-items: center;
