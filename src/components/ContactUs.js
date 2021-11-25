@@ -34,14 +34,15 @@ export default class ContactUs extends Component {
               <h2 className="text-light text-center">Send us your info!</h2>
               <Form style={{margin: 'auto'}}>
                 <FormGroup>
-                  <Label className="text-light my-1" for="exampleEmail">Email</Label>
-                  <Input type="email" name="email" id="exampleEmail" placeholder="Email" />
+                  <Label className="text-light my-1" for="email">Email</Label>
+                  <Input type="email" name="email" id="email" placeholder="Email" />
                 </FormGroup>
-                <FormGroup style={{paddingBottom: '180px'}}>
-                  <Label className="text-light my-1" for="exampleText">Text Area</Label>
+                <FormGroup >
+                  <Label className="text-light my-1" for="text">Text Area</Label>
                   <Input style={{height: '200px'}} type="textarea" name="text" id="exampleText" placeholder="Your thoughts..." />
                 </FormGroup>
-                <Button>Submit</Button>
+
+                <Button style={{marginBottom: '200px', marginTop: '10px'}}>Submit</Button>
               </Form>     
             </div>
             <Footer />
