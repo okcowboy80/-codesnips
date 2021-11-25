@@ -7,11 +7,24 @@ import Footer from './Footer';
 
 export default class ContactUs extends Component {
 
+  constructor(props) {
+    super(props)
+    this.state = {
+
+      email: this.props.email,
+      text: this.props.text
+    }
+  }
   render() {
 
-    function handleSubmit() {
+    const resetForm = () => {
+      document.getElementById("contact-form").reset();
+
+    }
+
+    const handleSubmit = () => {
       alert("Form was submitted successfuly!");
-      window.location.reload();
+      resetForm();
     }
 
     document.querySelector("body").style.backgroundColor= "#2B3643"
@@ -39,7 +52,7 @@ export default class ContactUs extends Component {
                   </pre> 
               </code>
               <h2 className="text-light text-center">Send us your info!</h2>
-              <Form style={{margin: 'auto'}}>
+              <Form style={{margin: 'auto'}} id="contact-form">
                 <FormGroup>
                   <Label className="text-light my-1" for="email">Email</Label>
                   <Input type="email" name="email" id="email" placeholder="Email" />
