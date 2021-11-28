@@ -112,7 +112,7 @@ export class MyNav extends Component {
 							<Link to= '/contact'>Contact Us</Link>
 							</DropdownItem>
 							<DropdownItem divider />
-							<DropdownItem>
+							<DropdownItem className="disabled">
 							Snippet Gallery
 							</DropdownItem>
 						</DropdownMenu>
