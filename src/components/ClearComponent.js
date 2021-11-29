@@ -18,8 +18,8 @@ export class ClearComponent extends Component {
         }
         return (
             <div className="myEditor mt-auto">
-                <Button className="copy" onClick={onCopy}>Copy </Button>
-                <Button className="btn mt-3" onClick={onClear}>Reset</Button>
+                <Button className="btn btn-muted" onClick={onCopy}>Copy </Button>
+                <Button className="btn btn-danger mt-3" onClick={onClear}>Reset</Button>
             </div>
         )
     }

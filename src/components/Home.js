@@ -4,23 +4,18 @@ import EditorMenu from './EditorMenu';
 import ClearComponent from './ClearComponent';
 import Footer from './Footer';
 import EditorCard from './EditorCard';
+import { BrowserRouter as Router } from 'react-router-dom';
 
-
-export default function Home() {
+export default function Home(props) {
   
   const [title, setTitle] = useState('');
   const [language, setLanguage] = useState('');
   const [style, setStyle] = useState('');
   const [languageSelect, setLanguageSelect] = useState('');
-  const [author, setAuthor] = useState('');
   const [data, setData] = useState('');
   
   const handleTitle = (title) =>{
     setTitle(title)
-  }
-
-  const handleAuthor = (author) =>{
-    setAuthor(author)
   }
 
   const handleLanguage = (str) => {
@@ -63,14 +58,16 @@ export default function Home() {
 
   return (
     
-      <>
+      
+        <>
+        <Router>
         <div className="pane top-pane" >
-          <EditorMenu onSetTitle={handleTitle} onSetLanguage={handleLanguage} onSetStyle={handleStyle} onSetAuthor={handleAuthor}/>
+          <EditorMenu onSetTitle={handleTitle} onSetLanguage={handleLanguage} onSetStyle={handleStyle} />
           <Editor 
             title={title ? title : "CodeSnip 1"}
             language={language ? language : "text"} 
             displayName={languageSelect ? languageSelect : "Text"} 
-            author={author ? author : "User_1"}
+            author={props.author ? props.author : "User_1"}
             style={style ? style : "midnight"}
             value={data} 
             onChange={setData}
@@ -106,6 +103,8 @@ export default function Home() {
           
         </div>
         <Footer />
-      </>
+        </Router>
+        </>
+      
   );
 }

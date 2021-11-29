@@ -83,7 +83,7 @@ class EditorMenu extends Component {
                         </div>
                     </ButtonGroup>
                    
-                    <Button className="btn mt-auto">Save</Button>
+                    <Button className="btn btn-success mt-auto">Save</Button>
                 </Form>
             </div>
         )

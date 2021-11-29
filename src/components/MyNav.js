@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody, Button } from 'reactstrap';
+import { 
+	Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody, 
+	Button, Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, 
+	UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem 
+} from 'reactstrap';
 
-import {
-  Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, 
-	UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 
 export class MyNav extends Component {
 
 	constructor(props) {
+
 		super(props);
 		this.state = { 
 			isToggleOn: true,
@@ -18,6 +20,7 @@ export class MyNav extends Component {
 			password: "",
 			email: ""
 		};
+
 		this.toggle = this.toggle.bind(this);
 		this.toggleModal = this.toggleModal.bind(this);
 		this.toggleSignUpModal = this.toggleSignUpModal.bind(this);
@@ -62,15 +65,19 @@ export class MyNav extends Component {
 
 	  handleLogin(event) {
 			alert(`Username: ${this.state.username}\n Password: ${this.state.password}`);
+			
 			this.toggleModal();
 			event.preventDefault();
+			this.props.onAuthorSet(this.state.username);
 			this.resetForm();
     }
 
 		handleSignUp(event) {
 			alert(`Username: ${this.state.username}\n Password: ${this.state.password}`);
+			
 			this.toggleSignUpModal();
 			event.preventDefault();
+			this.props.onAuthorSet(this.state.username);
 			this.resetForm();
 		}
 
@@ -79,6 +86,8 @@ export class MyNav extends Component {
 			this.setState({ email: '' });
 			this.setState({ password: '' });
 		}
+
+		
 
 	render() {
 		const { username, email, password } = this.state
