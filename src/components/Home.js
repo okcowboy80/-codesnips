@@ -57,8 +57,6 @@ export default function Home(props) {
   }
 
   return (
-    
-      
         <>
         <Router>
         <div className="pane top-pane" >
@@ -105,6 +103,5 @@ export default function Home(props) {
         <Footer />
         </Router>
         </>
-      
   );
 }
